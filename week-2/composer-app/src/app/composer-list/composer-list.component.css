@@ -1,0 +1,15 @@
+.composer-list-container {
+  padding: 10px 80px;
+}
+
+table, tr, td  {
+  border: 1px solid;
+}
+
+td {
+  padding-left: 8px;
+}
+
+table{
+  table-layout: fixed;
+}

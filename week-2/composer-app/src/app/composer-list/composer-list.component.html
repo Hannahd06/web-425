@@ -1,0 +1,33 @@
+<!--
+    Title: composer-list.component.html
+    Arthur: Hannah Del Real
+    Date: 08/17/2023
+    Description: Composer List Component displaying a table list of composers and their genre.
+-->
+
+<div class="composer-list-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center"> List of Composers</h3>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Genre</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let composer of composers">
+          <td scope="row">{{ composer.fullName }}</td>
+          <td scope="row"> {{ composer.genre }} </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

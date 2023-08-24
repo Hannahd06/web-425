@@ -1,5 +1,14 @@
+/**
+; Title: person.class.ts
+; Author: Professor Krasso
+; Date: 08/11/2023
+; Modified By: Hannah Del Real
+; Description: Person Class
+*/
+
 import { IPerson } from "./person.interface";
 
+//Create a class named Person from IPerson with first and last name
 class Person implements IPerson {
     firstName: string;
     lastName: string;

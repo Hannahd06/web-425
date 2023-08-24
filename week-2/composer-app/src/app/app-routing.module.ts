@@ -1,3 +1,12 @@
+/**
+; Title: app.routing.module.ts
+; Author: Professor Krasso
+; Date: 08/17/2023
+; Modified By: Hannah Del Real
+; Description: Routing for Composer App
+*/
+
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComposerListComponent } from './composer-list/composer-list.component';

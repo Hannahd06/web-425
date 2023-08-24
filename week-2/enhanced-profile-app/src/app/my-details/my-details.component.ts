@@ -1,5 +1,14 @@
+/**
+; Title: my-details.component.ts
+; Author: Professor Krasso
+; Date: 08/15/2023
+; Modified By: Hannah Del Real
+; Description: My details Component
+*/
+
 import { Component, OnInit } from '@angular/core';
 
+//Export class Person
 export default class Person {
     fullName: string;
     favoriteFood: string;

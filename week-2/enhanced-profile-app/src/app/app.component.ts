@@ -1,3 +1,11 @@
+/**
+; Title: app.component.ts
+; Author: Professor Krasso
+; Date: 08/15/2023
+; Modified By: Hannah Del Real
+; Description: App Component for Enhanced Profile App
+*/
+
 import { Component } from '@angular/core';
 
 @Component({

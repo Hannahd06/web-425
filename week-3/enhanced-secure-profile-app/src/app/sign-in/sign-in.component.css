@@ -1,0 +1,13 @@
+/**
+    Title: sign-in.component.css
+    Author: Professor Richard Krasso
+    modified by: Hannah Del Real
+    Date: 08/22/23
+    Description: CSS styling for sign-in.component.html
+*/
+
+.signin-container {
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 10%;
+}

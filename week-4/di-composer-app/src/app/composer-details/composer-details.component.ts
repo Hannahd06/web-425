@@ -21,11 +21,13 @@ export class ComposerDetailsComponent implements OnInit {
   composerId: number;
   composer: IComposer;
 
-// Use ActivatedRoute to access value for composerId
+// Use ActivatedRoute to access value for composerId and activate new instance of ComposerService
   constructor(private route: ActivatedRoute, private composerService: ComposerService) {
     this.composerId = parseInt(this.route.snapshot.paramMap.get('composerId'), 10);
 
     if (this.composerId) {
+
+      // Use dependency injection to create new instance of composerService
       this.composer = this.composerService.getComposer(this.composerId);
     }
 

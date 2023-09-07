@@ -1,0 +1,35 @@
+<!--
+    Title: book-details-dialog.component.html
+    Author: Professor Richard Krasso
+    Modified by: Hannah Del Real
+    Date: 09/06/2023
+    Description: Dialog box displaying selected book's details for the In-N-Out-Books app created with Angular.
+-->
+<mat-card>
+  <mat-card-title class="blue book-details-title">
+    {{ book.title }}
+  </mat-card-title>
+
+  <!--- Display selected book's details in a dialog box -->
+  <mat-card-content>
+    <div class="book-details" fxFlex="column">
+      <p>
+        <b>Description:</b>  {{ book.description }}
+      </p>
+      <p>
+        <b>ISBN:</b>  {{ book.isbn }}
+      </p>
+
+      <p>
+        <b>Author(s):</b>  {{book.authors.join(', ')}}
+      </p>
+      <p>
+        <b>Number of pages:</b>  {{book.numOfPages }}
+      </p>
+    </div>
+  </mat-card-content>
+<!--- Close Dialog box by pressing okay button -->
+  <mat-card-actions align="end">
+    <button mat-raised-button color="accent" matDialogClose="confirm">Ok</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,47 @@
+/**
+    Title: styles.scss
+    Author: Professor Richard Krasso
+    Modified by:Hannah Del Real
+    Date: 09/05/23
+    Description: CSS styling for In-N-Out-Books App
+*/
+
+@import './theme';
+
+html, body {
+  height: 100%;
+ }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+
+ .blue {
+  color: #2196f3;
+ }
+
+ .green {
+  color: #66bb6a;
+ }
+
+ .attribution-link {
+  text-decoration: none;
+  color: white;
+ }
+
+ .attribution-link:hover {
+  text-decoration: underline;
+ }
+
+ .card-title-icon {
+  text-align: center;
+ }
+
+ .card-title-con, .mat-icon {
+  font-size: 72px;
+ }
+
+ .align-center {
+  text-align: center;
+ }

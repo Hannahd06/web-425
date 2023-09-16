@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
                 break;
                 case 'B': gpa +=3.00;
                 break;
-                case 'B': gpa +=2.70;
+                case 'B-': gpa +=2.70;
                 break;
                 case 'C+': gpa +=2.30;
                 break;

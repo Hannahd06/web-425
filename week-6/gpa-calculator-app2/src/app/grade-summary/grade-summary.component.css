@@ -1,0 +1,12 @@
+/**
+    Title: grade-summary.component.css
+    Author: Professor Richard Krasso
+    Modified by:Hannah Del Real
+    Date: 09/12/23
+    Description: CSS styling for user's transcript grade summary for GPA Calculator App
+*/
+
+.transcript {
+  font-weight: 300;
+  font-size: 18px;
+}

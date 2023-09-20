@@ -1,0 +1,89 @@
+<!--
+    Title: home.component.html
+    Author: Professor Richard Krasso
+    Modified by: Hannah Del Real
+    Date: 09/13/2023
+    Description:  Home Page  for GPA Calculator App.
+-->
+
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <div fxFlex class="grade-form">
+
+    <!-- Card for left hand card containing input form for course and grade -->
+    <mat-card class="mat-elevation-z8">
+      <mat-card-title>Grade Entry</mat-card-title>
+
+      <mat-card-content>
+
+        <form fxLayout="column" fxLayoutGap="16px">
+
+        <!-- Form field for user to provide text input for course title  -->
+          <mat-form-field fxFlex appearance="fill">
+
+            <mat-label>Course</mat-label>
+
+            <input type="text" name="txtCourse" id="txtCourse" matInput [(ngModel)]="transcriptEntry.course"  />
+
+          </mat-form-field>
+
+          <!-- Form field for user to select letter grade from  dropdown options associated with inputted course  -->
+          <mat-form-field fxFlex appearance="fill">
+
+            <mat-label>Grade</mat-label>
+
+            <mat-select name="selectGrade" [(ngModel)]="transcriptEntry.grade">
+
+              <mat-option *ngFor="let grade of selectableGrades" [value]="grade">{{ grade }}</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+
+          <!-- Button for user to trigger an onlick event to push newly inputted entry object to transcript  -->
+            <button mat-raised-button color="primary" (click)="saveEntry()" id="btnSave" >Save</button>
+
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex class="grade-summary">
+
+    <!-- Button for user to trigger an onclick event that clears all entry objects displayed in the transcript  -->
+    <button mat-button color="primary" (click)="clearEntries()" >Clear Transcript</button>
+
+    <!-- Right side card to display transcript information   -->
+    <mat-card class="mat-elevation-z8">
+      <mat-card-title>Transcript</mat-card-title>
+
+      <mat-card-content>
+  <!-- Display  a list of all course/grade entries added by the user in a session   -->
+        <app-grade-summary *ngFor="let entry of transcriptEntries" [course]="entry.course" [grade]="entry.grade"></app-grade-summary>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
+<br />
+
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxFlex class="gpa">
+
+    <!-- Create a button that triggers an onclick event that calls the function calculateResults() to calculate GPA based on all grades provided  in the transcript transcript    -->
+    <button mat-button color="primary" (click)="calculateResults()" >Calculate GPA</button>
+
+    <!-- Bottom card to display calculated gpa value   -->
+    <mat-card>
+
+      <mat-card-title style="text-align: center; font-size: 20px;">
+
+        GPA: <app-gpa [gpaTotal]="gpaTotal"></app-gpa>
+
+      </mat-card-title>
+
+    </mat-card>
+
+  </div>
+</div>

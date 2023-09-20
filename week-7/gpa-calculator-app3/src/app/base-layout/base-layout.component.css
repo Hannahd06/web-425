@@ -1,0 +1,17 @@
+/**
+    Title: base-layout.component.css
+    Author: Professor Richard Krasso
+    Modified by:Hannah Del Real
+    Date: 09/12/23
+    Description: CSS styling for  base layout for GPA Calculator App
+*/
+
+.logo {
+  margin-top: 5px;
+}
+
+.main-container {
+  padding-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+}

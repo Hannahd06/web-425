@@ -1,0 +1,45 @@
+<!--
+    Title: book-list.component.html
+    Author: Professor Richard Krasso
+    Modified by: Hannah Del Real
+    Date: 09/25/2023
+    Description: Book List Page for the In-N-Out-Books app created with Angular.
+-->
+
+<div fxLayout="column wrap">
+
+<!-- Create an ng container with an ng if statement to check if there no books in books array-->
+  <ng-container *ngIf="books.length === 0">
+  <!-- If no books, display a spinner -->
+  <mat-spinner></mat-spinner>
+</ng-container>
+
+<div>
+  <!-- Create a h2 header with the top number of books based on the number of books in the array-->
+  <h2 color="green">Top {{books.length}} Favorite Books</h2>
+  <div class="grid-container">
+
+    <!-- Create an ng container with an ng if statement to check if there are books in books array-->
+    <ng-container *ngFor="let book of books">
+      <mat-card class="grid-container_item mat-elevation-z8">
+
+        <!-- If there are books in the array, display book details -->
+        <mat-card-title class="grid-container_ahref" (click)="showBookDetails(book.isbn)">
+          <a>
+            {{ book.title }}
+          </a>
+        </mat-card-title>
+
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>ISBN: {{ book.isbn }}</mat-list-item>
+            <mat-list-item>Number of Pages: {{ book.numOfPages }}</mat-list-item>
+            <mat-list-item>Authors: {{ book.authors }}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
+
+</div>

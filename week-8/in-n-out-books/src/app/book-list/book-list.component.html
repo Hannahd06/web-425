@@ -16,7 +16,7 @@
 
 <div>
   <!-- Create a h2 header with the top number of books based on the number of books in the array-->
-  <h2 color="green">Top {{books.length}} Favorite Books</h2>
+  <h2 class="green">Top {{books.length}} Favorite Books</h2>
   <div class="grid-container">
 
     <!-- Create an ng container with an ng if statement to check if there are books in books array-->
@@ -24,14 +24,14 @@
       <mat-card class="grid-container_item mat-elevation-z8">
 
         <!-- If there are books in the array, display book details -->
-        <mat-card-title class="grid-container_ahref" (click)="showBookDetails(book.isbn)">
+        <mat-card-title class=" blue grid-container_ahref" (click)="showBookDetails(book.isbn)">
           <a>
             {{ book.title }}
           </a>
         </mat-card-title>
-
+<!-- Display a list of book details including ISBN, numOfPages, and Authors -->
         <mat-card-content>
-          <mat-list>
+          <mat-list style="font-size: 16px;">
             <mat-list-item>ISBN: {{ book.isbn }}</mat-list-item>
             <mat-list-item>Number of Pages: {{ book.numOfPages }}</mat-list-item>
             <mat-list-item>Authors: {{ book.authors }}</mat-list-item>

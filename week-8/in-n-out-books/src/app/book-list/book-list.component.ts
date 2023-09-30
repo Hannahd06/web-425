@@ -24,21 +24,24 @@ export class BookListComponent implements OnInit {
   book: IBook;
 
   constructor(private booksService: BooksService, private dialog: MatDialog) {
+
+    // Subscribe to the getBooks function.
     this.booksService.getBooks().subscribe(res => {
 
       console.log(res);
-
+      // Create a for...in loop to loop over the the response data object to check if hasOwnProperty() is true.
       for (let key in res) {
 
+        // If returns true, push the res object to the books array.
         if (res.hasOwnProperty(key)) {
-
+          // create an author variable as an array to the object property authors as an array of names.
           let authors = [];
           if (res[key].details.authors) {
             authors = res[key].details.authors.map(function(author) {
               return author.name;
             })
           }
-
+          // Push the object properties isbn, title, description, numOfPages, and authors to the books array.
           this.books.push({
             isbn: res[key].details.isbn_13 ? res[key].details.isbn_13 : res[key].details.isbn_10,
             title: res[key].details.title,
@@ -54,12 +57,12 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
- // Display book details for the book with the isbn number that matches user input
+  // Display  book details based on user isbn selection.
  showBookDetails(isbn: string) {
   // Use JS built in find function to search books array and return book object with matching isbn value.
   this.book = this.books.find(book => book.isbn === isbn);
 
-  // Create a variable to contain dialog
+  // Create a variable to contain dialog content.
   const dialogRef = this.dialog.open(BookDetailsDialogComponent, {
     data: {
       book:this.book
@@ -67,6 +70,7 @@ export class BookListComponent implements OnInit {
     disableClose: true,
     width: '800px'
   });
+   //  Close dialog  box.
   dialogRef.afterClosed().subscribe(result =>{
     if (result === confirm) {
        this.book = null;
